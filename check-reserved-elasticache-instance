@@ -45,7 +45,7 @@ for c in clusters:
         continue
     a_zone = args.region
     key = (c['Engine'], c['CacheNodeType'], a_zone)
-    running_instances[key] = running_instances.get(key, 0) + 1
+    running_instances[key] = running_instances.get(key, 0) + c['NumCacheNodes']
 
 reserved_instances = {}
 soon_expire_ri = {}
